@@ -1,11 +1,15 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import "./BannerItem.scss";
 
-const BannerItem = ({ name, columns, price, image }) => {
+const BannerItem = ({ name, columns, imgUrl, history }) => {
   return (
-    <div className={`col-md-${columns} banner-item`}>
+    <div
+      className={`col-md-${columns} banner-item mb-4`}
+      onClick={() => history.push(`/category/${name.toLowerCase()}`)}
+    >
       <div className="banner-item-inner">
-        <img src={image} alt="" />
+        <img src={imgUrl} alt="" />
         <div className="centered">
           <h2>{name}</h2>
           <span>Shop Now</span>
@@ -15,4 +19,4 @@ const BannerItem = ({ name, columns, price, image }) => {
   );
 };
 
-export default BannerItem;
+export default withRouter(BannerItem);

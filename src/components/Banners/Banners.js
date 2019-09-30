@@ -17,12 +17,12 @@ class Banners extends Component {
 
   render() {
     return (
-      <div className="row banners">
-        {this.state.categories.map(({ name, imgUrl, columns }, i) => {
-          return (
-            <BannerItem key={i} name={name} image={imgUrl} columns={columns} />
-          );
-        })}
+      <div className="container banners">
+        <div className="row">
+          {this.state.categories.map((i, props) => {
+            return <BannerItem key={i} {...props} />;
+          })}
+        </div>
       </div>
     );
   }
