@@ -1,0 +1,27 @@
+[
+  {
+    "imgUrl": "./images/outdoor.jpg",
+    "name": "OUTDOOR",
+    "columns": 6
+  },
+  {
+    "imgUrl": "./images/tennis.jpg",
+    "name": "TENNIS",
+    "columns": 6
+  },
+  {
+    "imgUrl": "/images/basketball.jpg",
+    "name": "BASKETBALL",
+    "columns": 4
+  },
+  {
+    "imgUrl": "/images/football.jpg",
+    "name": "FOOTBALL",
+    "columns": 4
+  },
+  {
+    "imgUrl": "/images/running.jpg",
+    "name": "RUNNING",
+    "columns": 4
+  }
+]

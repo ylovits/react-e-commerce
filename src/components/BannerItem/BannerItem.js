@@ -1,9 +1,10 @@
 import React from "react";
 
-const BannerItem = ({ title, columns }) => {
+const BannerItem = ({ name, columns, price, image }) => {
   return (
     <div className={`col-md-${columns}`}>
-      <h1>{title}</h1>
+      <img src={image} alt="" />
+      <h1>{name}</h1>
       <span>Shop Now</span>
     </div>
   );

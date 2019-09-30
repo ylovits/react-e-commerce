@@ -1,16 +1,30 @@
-import React from "react";
+import React, { Component } from "react";
 import BannerItem from "../BannerItem/BannerItem";
 
-const Banners = () => {
-  return (
-    <div className="row">
-      <BannerItem columns="6" title="Category 1" />
-      <BannerItem columns="6" title="Category 2" />
-      <BannerItem columns="4" title="Category 3" />
-      <BannerItem columns="4" title="Category 4" />
-      <BannerItem columns="4" title="Category 5" />
-    </div>
-  );
-};
+class Banners extends Component {
+  constructor() {
+    super();
+    this.state = {
+      categories: []
+    };
+  }
+
+  componentDidMount() {
+    var data = require("../../fakeapi/categories.json");
+    this.setState({ categories: data });
+  }
+
+  render() {
+    return (
+      <div className="row">
+        {this.state.categories.map(({ name, imgUrl, columns }, i) => {
+          return (
+            <BannerItem key={i} name={name} image={imgUrl} columns={columns} />
+          );
+        })}
+      </div>
+    );
+  }
+}
 
 export default Banners;
