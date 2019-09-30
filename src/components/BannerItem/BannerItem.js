@@ -1,9 +1,9 @@
 import React from "react";
 
-const BannerItem = props => {
+const BannerItem = ({ title, columns }) => {
   return (
-    <div>
-      <h1>{props.title}</h1>
+    <div className={`col-md-${columns}`}>
+      <h1>{title}</h1>
       <span>Shop Now</span>
     </div>
   );
