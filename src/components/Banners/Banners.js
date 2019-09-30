@@ -19,8 +19,15 @@ class Banners extends Component {
     return (
       <div className="container banners">
         <div className="row">
-          {this.state.categories.map((i, props) => {
-            return <BannerItem key={i} {...props} />;
+          {this.state.categories.map(({ name, imgUrl, columns }, i) => {
+            return (
+              <BannerItem
+                key={i}
+                name={name}
+                imgUrl={imgUrl}
+                columns={columns}
+              />
+            );
           })}
         </div>
       </div>
