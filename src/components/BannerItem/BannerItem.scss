@@ -1,0 +1,31 @@
+.banner-item {
+  &-inner {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    img {
+      max-width: 100%;
+      height: auto;
+      transition: transform 3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
+
+    .centered {
+      position: absolute;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 1rem;
+      color: rgba(255, 255, 255, 1);
+      transition: all 800ms;
+    }
+
+    &:hover .centered {
+      background: rgba(0, 0, 0, 0.9);
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
+}

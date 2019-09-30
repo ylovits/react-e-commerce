@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import BannerItem from "../BannerItem/BannerItem";
+import "./Banners.scss";
 
 class Banners extends Component {
   constructor() {
@@ -16,7 +17,7 @@ class Banners extends Component {
 
   render() {
     return (
-      <div className="row">
+      <div className="row banners">
         {this.state.categories.map(({ name, imgUrl, columns }, i) => {
           return (
             <BannerItem key={i} name={name} image={imgUrl} columns={columns} />
