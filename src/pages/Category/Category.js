@@ -28,11 +28,12 @@ const Category = ({ match }) => {
 
   if (categExists(match.params.categoryId.toLowerCase())) {
     return (
-      <div className="container banners">
+      <div className="container banners mt-4 mb-4">
         <div className="row">
-          {products.map(product => (
-            <ProductTeaser key={product.MPN} product={product} />
-          ))}
+          {products.map(product => {
+            console.log(product);
+            return <ProductTeaser key={product.MPN} product={product} />;
+          })}
         </div>
       </div>
     );

@@ -2,8 +2,8 @@
   {
     "name": "IBERIA",
     "MPN": "11681",
-    "imgUrl": "./images/outdoor_p1_1.jpg",
-    "img2Url": "./images/outdoor_p1_2.jpg",
+    "imgUrl": "/images/outdoor_p1_1.jpg",
+    "img2Url": "/images/outdoor_p1_2.jpg",
     "img3Url": null,
     "category": "Outdoor",
     "description": "Sleeping Bag",
@@ -12,7 +12,7 @@
   {
     "name": "CAMPING 6 BULB LED",
     "MPN": "11461",
-    "imgUrl": "./images/outdoor_p2_1.jpg",
+    "imgUrl": "/images/outdoor_p2_1.jpg",
     "img2Url": null,
     "img3Url": null,
     "category": "Outdoor",
@@ -22,8 +22,8 @@
   {
     "name": "TRAINER",
     "MPN": "11447",
-    "imgUrl": "./images/outdoor_p3_1.jpg",
-    "img2Url": "./images/outdoor_p3_2.jpg",
+    "imgUrl": "/images/outdoor_p3_1.jpg",
+    "img2Url": "/images/outdoor_p3_2.jpg",
     "img3Url": null,
     "category": "Outdoor",
     "description": "Trekking baton",
@@ -32,8 +32,8 @@
   {
     "name": "RUN WAIST BAG",
     "MPN": "DY5723",
-    "imgUrl": "./images/running_p1_1.jpg",
-    "img2Url": "./images/running_p1_2.jpg",
+    "imgUrl": "/images/running_p1_1.jpg",
+    "img2Url": "/images/running_p1_2.jpg",
     "img3Url": null,
     "category": "Running",
     "description": "Waist bag for running by adidas",
@@ -42,7 +42,7 @@
   {
     "name": "BIG MOUTH BOTTLE 2.0",
     "MPN": "N000004209122",
-    "imgUrl": "./images/running_p2_1.jpg",
+    "imgUrl": "/images/running_p2_1.jpg",
     "img2Url": null,
     "img3Url": null,
     "category": "Running",
@@ -52,7 +52,7 @@
   {
     "name": "3-STRIPES MINI",
     "MPN": "X53042",
-    "imgUrl": "./images/basketball_p1_1.jpg",
+    "imgUrl": "/images/basketball_p1_1.jpg",
     "img2Url": null,
     "img3Url": null,
     "category": "Basketball",
@@ -62,7 +62,7 @@
   {
     "name": "BARCA",
     "MPN": "SC3283 45",
-    "imgUrl": "./images/football_p1_1.jpg",
+    "imgUrl": "/images/football_p1_1.jpg",
     "img2Url": null,
     "img3Url": null,
     "category": "Football",
@@ -72,8 +72,8 @@
   {
     "name": "GK MATCH YOUTH",
     "MPN": "GS3883 486",
-    "imgUrl": "./images/football_p2_1.jpg",
-    "img2Url": "./images/football_p2_2.jpg",
+    "imgUrl": "/images/football_p2_1.jpg",
+    "img2Url": "/images/football_p2_2.jpg",
     "img3Url": null,
     "category": "Football",
     "description": "Goalkeeper gloves",
@@ -82,8 +82,8 @@
   {
     "name": "AEROBILL",
     "MPN": "899656 100",
-    "imgUrl": "./images/tennis_p1_1.jpg",
-    "img2Url": "./images/tennis_p1_2.jpg",
+    "imgUrl": "/images/tennis_p1_1.jpg",
+    "img2Url": "/images/tennis_p1_2.jpg",
     "img3Url": null,
     "category": "Tennis",
     "description": "Tennis cap",
@@ -92,8 +92,8 @@
   {
     "name": "BURN 100LS RKT 3",
     "MPN": "WR000210U3",
-    "imgUrl": "./images/tennis_p2_1.jpg",
-    "img2Url": "./images/tennis_p2_2.jpg",
+    "imgUrl": "/images/tennis_p2_1.jpg",
+    "img2Url": "/images/tennis_p2_2.jpg",
     "img3Url": null,
     "category": "Tennis",
     "description": "Tennis racquet",
@@ -102,7 +102,7 @@
   {
     "name": "PLUS GR 4 PACK",
     "MPN": "474394",
-    "imgUrl": "./images/tennis_p3_1.jpg",
+    "imgUrl": "/images/tennis_p3_1.jpg",
     "img2Url": null,
     "img3Url": null,
     "category": "Tennis",
@@ -112,9 +112,9 @@
   {
     "name": "BOYS COURT DRI-FIT SHORT",
     "MPN": "AR2484 100",
-    "imgUrl": "./images/tennis_p4_1.jpg",
-    "img2Url": "./images/tennis_p4_2.jpg",
-    "img3Url": "./images/tennis_p4_3.jpg",
+    "imgUrl": "/images/tennis_p4_1.jpg",
+    "img2Url": "/images/tennis_p4_2.jpg",
+    "img3Url": "/images/tennis_p4_3.jpg",
     "category": "Tennis",
     "description": "Tennis shorts",
     "price": 29.0

@@ -1,0 +1,38 @@
+.product-teaser {
+  &-inner {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    img {
+      max-width: 100%;
+      height: auto;
+      transition: transform 1s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
+
+    .centered {
+      position: absolute;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 2px 9px;
+      color: rgba(255, 255, 255, 1);
+      transition: all 800ms;
+    }
+
+    &:hover .centered {
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
+  .name {
+    max-width: 170px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 auto;
+  }
+}

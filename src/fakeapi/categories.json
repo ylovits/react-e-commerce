@@ -1,11 +1,11 @@
 [
   {
-    "imgUrl": "./images/outdoor.jpg",
+    "imgUrl": "/images/outdoor.jpg",
     "name": "OUTDOOR",
     "columns": 6
   },
   {
-    "imgUrl": "./images/tennis.jpg",
+    "imgUrl": "/images/tennis.jpg",
     "name": "TENNIS",
     "columns": 6
   },
