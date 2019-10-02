@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Fragment, Component } from "react";
 import BannerItem from "../BannerItem/BannerItem";
 import "./Banners.scss";
 
@@ -17,7 +17,7 @@ class Banners extends Component {
 
   render() {
     return (
-      <div className="container banners">
+      <Fragment>
         <div className="row">
           {this.state.categories.map(({ name, imgUrl, columns }, i) => {
             return (
@@ -30,7 +30,7 @@ class Banners extends Component {
             );
           })}
         </div>
-      </div>
+      </Fragment>
     );
   }
 }

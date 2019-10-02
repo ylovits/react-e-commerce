@@ -17,10 +17,12 @@
       background: rgba(0, 0, 0, 0.3);
       padding: 2px 9px;
       color: rgba(255, 255, 255, 1);
+      opacity: 0;
       transition: all 800ms;
     }
 
     &:hover .centered {
+      opacity: 1;
       background: rgba(0, 0, 0, 0.5);
     }
 
@@ -29,10 +31,23 @@
     }
   }
   .name {
+    transition: all 800ms;
     max-width: 170px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     margin: 0 auto;
+    color: #777;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  &:hover .name {
+    color: #333;
   }
 }

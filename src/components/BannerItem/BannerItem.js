@@ -6,7 +6,7 @@ const BannerItem = ({ name, columns, imgUrl, history }) => {
   return (
     <div
       className={`col-md-${columns} banner-item mb-4`}
-      onClick={() => history.push(`category/${name.toLowerCase()}`)}
+      onClick={() => history.push(`/${name.toLowerCase()}`)}
     >
       <div className="banner-item-inner">
         <img src={imgUrl} alt="" />

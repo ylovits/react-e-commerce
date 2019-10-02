@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect } from "react";
+import { withRouter } from "react-router-dom";
 import ProductTeaser from "../../components/ProductTeaser/ProductTeaser.js";
 import NotFound from "../NotFound/NotFound";
+import "./Category.scss";
 
 const Category = ({ match }) => {
   const [products, setProducts] = useState([]);
@@ -28,18 +30,18 @@ const Category = ({ match }) => {
 
   if (categExists(match.params.categoryId.toLowerCase())) {
     return (
-      <div className="container banners mt-4 mb-4">
-        <div className="row">
+      <Fragment>
+        <h1 className="mb-4 mt-2">{match.params.categoryId.toUpperCase()}</h1>
+        <div className="row category">
           {products.map(product => {
-            console.log(product);
             return <ProductTeaser key={product.MPN} product={product} />;
           })}
         </div>
-      </div>
+      </Fragment>
     );
   } else {
     return <NotFound />;
   }
 };
 
-export default Category;
+export default withRouter(Category);
