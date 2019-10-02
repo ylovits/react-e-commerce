@@ -1,10 +1,9 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import ProductTeaser from "../../components/ProductTeaser/ProductTeaser.js";
-import NotFound from "../NotFound/NotFound";
 import "./Category.scss";
 
-const Category = ({ match }) => {
+const Category = ({ match, history }) => {
   const [products, setProducts] = useState([]);
   const productsjson = require("../../fakeapi/products.json");
 
@@ -40,7 +39,7 @@ const Category = ({ match }) => {
       </Fragment>
     );
   } else {
-    return <NotFound />;
+    history.push("/404");
   }
 };
 

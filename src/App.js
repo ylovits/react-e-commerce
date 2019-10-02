@@ -8,6 +8,7 @@ import Product from "./components/Product/Product";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import BreadCrumbs from "./components/BreadCrumbs/BreadCrumbs";
+import About from "./pages/About/About";
 
 const App = () => {
   return (
@@ -28,6 +29,17 @@ const App = () => {
             />
             <Route
               exact
+              path="/about"
+              render={props => (
+                <Fragment>
+                  <BreadCrumbs {...props} activelink="activeabout" />
+                  <About />
+                </Fragment>
+              )}
+            />
+            <Route exact path="/404" component={NotFound} />
+            <Route
+              exact
               path="/:categoryId"
               render={props => (
                 <Fragment>
@@ -46,15 +58,7 @@ const App = () => {
                 </Fragment>
               )}
             />
-            <Route
-              path="/"
-              render={props => (
-                <Fragment>
-                  <Header {...props} activelink="" />
-                  <NotFound />
-                </Fragment>
-              )}
-            />
+            <Route path="/" component={NotFound} />
           </Switch>
         </div>
         <Footer />
