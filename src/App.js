@@ -9,6 +9,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import BreadCrumbs from "./components/BreadCrumbs/BreadCrumbs";
 import About from "./pages/About/About";
+import SignInPage from "./pages/SignInPage/SignInPage";
 
 const App = () => {
   return (
@@ -24,6 +25,16 @@ const App = () => {
                 <Fragment>
                   <BreadCrumbs {...props} activelink="activehome" />
                   <HomePage />
+                </Fragment>
+              )}
+            />
+            <Route
+              exact
+              path="/signin"
+              render={props => (
+                <Fragment>
+                  <BreadCrumbs {...props} activelink="activesignin" />
+                  <SignInPage />
                 </Fragment>
               )}
             />
