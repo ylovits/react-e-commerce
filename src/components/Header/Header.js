@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { ReactComponent as Logo } from "../../fakeapi/logo.svg";
 import "./Header.scss";
 
 const Header = () => {
@@ -18,8 +19,8 @@ const Header = () => {
       <div className="grid row menu">
         <div className="col-8 col-md-5 pt-3">
           <p className="logo">
-            <Link to="/">
-              <img src="./images/logo.png" alt="" />
+            <Link className="logo-wrap" to="/">
+              <Logo className="logo" />
             </Link>
           </p>
         </div>
