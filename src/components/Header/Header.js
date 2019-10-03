@@ -18,7 +18,9 @@ const Header = () => {
       <div className="grid row menu">
         <div className="col-8 col-md-5 pt-3">
           <p className="logo">
-            <Link to="/">SportStore</Link>
+            <Link to="/">
+              <img src="./images/logo.png" alt="" />
+            </Link>
           </p>
         </div>
         <div className="col-4 col-md-7 pt-1">

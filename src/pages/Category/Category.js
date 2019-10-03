@@ -38,7 +38,6 @@ const Category = ({ match, history }) => {
     }
     return (
       <Fragment>
-        <h1 className="mb-4 mt-2">{match.params.categoryId.toUpperCase()}</h1>
         <div className="row category">
           {products.map(product => {
             return <ProductTeaser key={product.MPN} product={product} />;
