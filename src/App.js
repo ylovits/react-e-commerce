@@ -9,7 +9,7 @@ import "./App.scss";
 import HomePage from "./pages/HomePage/HomePage";
 import NotFound from "./pages/NotFound/NotFound";
 import Category from "./pages/Category/Category";
-import Product from "./components/Product/Product";
+import Product from "./pages/Product/Product";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import BreadCrumbs from "./components/BreadCrumbs/BreadCrumbs";

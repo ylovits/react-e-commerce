@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../fakeapi/logo.svg";
+import Minicart from "../Minicart/Minicart";
 import "./Header.scss";
 import { auth } from "../../firebase/firebase.utils";
 import { connect } from "react-redux";
@@ -52,9 +53,7 @@ const Header = ({ currentUser }) => {
             <li className="nav-item">
               <Link to="/about">About</Link>
             </li>
-            <li className="nav-item">
-              <Link to="/cart">Cart (0)</Link>
-            </li>
+            <Minicart />
           </ul>
         </div>
       </div>
