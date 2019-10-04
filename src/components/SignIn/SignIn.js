@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { signInWithGoogle, auth } from "../../firebase/firebase.utils";
 export class SignIn extends Component {
   constructor(props) {
     super(props);
@@ -10,9 +10,15 @@ export class SignIn extends Component {
     };
   }
 
-  handleSubmit = event => {
+  handleSubmit = async event => {
     event.preventDefault();
-    this.setState({ email: "", password: "" });
+    const { email, password } = this.state;
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+      this.setState({ email: "", password: "" });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   handleChange = event => {
@@ -69,7 +75,7 @@ export class SignIn extends Component {
                 </label>
               </div>
               <input
-                value="Submit Form"
+                defaultValue="Submit Form"
                 className="btn btn-lg btn-primary btn-block text-uppercase"
                 type="submit"
               />
@@ -77,15 +83,9 @@ export class SignIn extends Component {
               <hr className="my-4" />
               <button
                 className="btn btn-lg btn-google btn-block text-uppercase"
-                type="submit"
+                onClick={signInWithGoogle}
               >
                 <i className="fab fa-google mr-2"></i> Sign in with Google
-              </button>
-              <button
-                className="btn btn-lg btn-facebook btn-block text-uppercase"
-                type="submit"
-              >
-                <i className="fab fa-facebook-f mr-2"></i> Sign in with Facebook
               </button>
             </form>
           </div>

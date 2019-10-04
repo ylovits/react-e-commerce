@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../fakeapi/logo.svg";
 import "./Header.scss";
+import { auth } from "../../firebase/firebase.utils";
 
-const Header = () => {
+const Header = ({ currentUser }) => {
   const [menuClassName, setClassName] = useState("");
 
   const handleClick = () => {
@@ -37,7 +38,13 @@ const Header = () => {
               <Link to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <Link to="/signin">Sign In</Link>
+              {currentUser ? (
+                <div className="cursor-pointer" onClick={() => auth.signOut()}>
+                  Sign Out
+                </div>
+              ) : (
+                <Link to="/signin">Sign In</Link>
+              )}
             </li>
             <li className="nav-item">
               <Link to="/about">About</Link>
