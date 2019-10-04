@@ -64,16 +64,6 @@ export class SignIn extends Component {
                 <label htmlFor="inputPassword">Password</label>
               </div>
 
-              <div className="custom-control custom-checkbox mb-3">
-                <input
-                  type="checkbox"
-                  className="custom-control-input"
-                  id="customCheck1"
-                ></input>
-                <label className="custom-control-label" htmlFor="customCheck1">
-                  Remember password
-                </label>
-              </div>
               <input
                 defaultValue="Submit Form"
                 className="btn btn-lg btn-primary btn-block text-uppercase"
