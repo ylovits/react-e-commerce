@@ -36,9 +36,6 @@ const Header = ({ currentUser }) => {
           </span>
           <ul className={`bg-light ${menuClassName}`}>
             <li className="nav-item">
-              <Link to="/">Home</Link>
-            </li>
-            <li className="nav-item">
               {currentUser ? (
                 <div className="cursor-pointer" onClick={() => auth.signOut()}>
                   Sign Out
@@ -47,6 +44,11 @@ const Header = ({ currentUser }) => {
                 <Link to="/signin">Sign In</Link>
               )}
             </li>
+            {currentUser && (
+              <li className="nav-item">
+                <Link to="/account">My Account</Link>
+              </li>
+            )}
             <li className="nav-item">
               <Link to="/about">About</Link>
             </li>

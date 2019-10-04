@@ -1,5 +1,10 @@
 import React, { Fragment, Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from "react-router-dom";
 import "./App.scss";
 import HomePage from "./pages/HomePage/HomePage";
 import NotFound from "./pages/NotFound/NotFound";
@@ -9,6 +14,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import BreadCrumbs from "./components/BreadCrumbs/BreadCrumbs";
 import About from "./pages/About/About";
+import Account from "./pages/Account/Account";
 import SignInPage from "./pages/SignInPage/SignInPage";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { connect } from "react-redux";
@@ -61,7 +67,11 @@ class App extends Component {
                 render={props => (
                   <Fragment>
                     <BreadCrumbs {...props} activelink="activesignin" />
-                    <SignInPage />
+                    {this.props.currentUser ? (
+                      <Redirect to="/" />
+                    ) : (
+                      <SignInPage />
+                    )}
                   </Fragment>
                 )}
               />
@@ -72,6 +82,16 @@ class App extends Component {
                   <Fragment>
                     <BreadCrumbs {...props} activelink="activeabout" />
                     <About />
+                  </Fragment>
+                )}
+              />
+              <Route
+                exact
+                path="/account"
+                render={props => (
+                  <Fragment>
+                    <BreadCrumbs {...props} activelink="activeaccount" />
+                    <Account />
                   </Fragment>
                 )}
               />
@@ -106,11 +126,15 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser
+});
+
 const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(App);

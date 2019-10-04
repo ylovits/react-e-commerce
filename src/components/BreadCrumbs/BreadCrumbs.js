@@ -24,6 +24,15 @@ const BreadCrumbs = ({ match }) => {
                   </Link>
                 </li>
               )}
+              {match.path === "/account" && (
+                <li className="breadcrumb-item active">MY ACCOUNT</li>
+              )}
+              {match.path === "/signin" && (
+                <li className="breadcrumb-item active">SIGN IN</li>
+              )}
+              {match.path === "/about" && (
+                <li className="breadcrumb-item active">ABOUT</li>
+              )}
               {match.params.productMPN && (
                 <li className="breadcrumb-item active">{productName.name}</li>
               )}

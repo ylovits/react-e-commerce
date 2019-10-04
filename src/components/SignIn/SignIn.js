@@ -71,13 +71,13 @@ export class SignIn extends Component {
               />
 
               <hr className="my-4" />
-              <button
-                className="btn btn-lg btn-google btn-block text-uppercase"
-                onClick={signInWithGoogle}
-              >
-                <i className="fab fa-google mr-2"></i> Sign in with Google
-              </button>
             </form>
+            <button
+              className="btn btn-lg btn-google btn-block text-uppercase"
+              onClick={signInWithGoogle}
+            >
+              <i className="fab fa-google mr-2"></i> Sign in with Google
+            </button>
           </div>
         </div>
       </div>
