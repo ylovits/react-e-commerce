@@ -16,6 +16,7 @@ import BreadCrumbs from "./components/BreadCrumbs/BreadCrumbs";
 import About from "./pages/About/About";
 import Account from "./pages/Account/Account";
 import SignInPage from "./pages/SignInPage/SignInPage";
+import Checkout from "./pages/Checkout/Checkout";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/userActions";
@@ -84,6 +85,16 @@ class App extends Component {
                   <Fragment>
                     <BreadCrumbs {...props} activelink="activeabout" />
                     <About />
+                  </Fragment>
+                )}
+              />
+              <Route
+                exact
+                path="/checkout"
+                render={props => (
+                  <Fragment>
+                    <BreadCrumbs {...props} activelink="activecheckout" />
+                    <Checkout />
                   </Fragment>
                 )}
               />

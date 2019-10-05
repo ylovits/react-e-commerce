@@ -11,7 +11,7 @@ const BannerItem = ({ name, columns, imgUrl, history }) => {
       <div className="banner-item-inner">
         <img src={imgUrl} alt="" />
         <div className="centered">
-          <h2>{name}</h2>
+          <h2 className="h5">{name}</h2>
           <span>Shop Now</span>
         </div>
       </div>
