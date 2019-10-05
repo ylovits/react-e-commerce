@@ -22,19 +22,19 @@ class Image extends Component {
   }
 }
 
-const ProductTeaser = ({ product }) => {
+const ProductTeaser = ({ item }) => {
   const fallbackUrl = "./images/fallback.jpg";
   return (
     <div className="col-md-3 col-sm-6 mb-4 product-teaser">
-      <Link to={`/${product.category.toLowerCase()}/${product.MPN}`}>
+      <Link to={`/${item.category.toLowerCase()}/${item.MPN}`}>
         <div className="bg-white shadow-sm pb-4 pt-4 ">
           <div className="product-teaser-inner">
-            <Image src={product.imgUrl} fallbackSrc={fallbackUrl} />
+            <Image src={item.imgUrl} fallbackSrc={fallbackUrl} />
             <div className="centered">
               <span>Shop Now</span>
             </div>
           </div>
-          <p className="name text-center">{product.name}</p>
+          <p className="name text-center">{item.name}</p>
         </div>
       </Link>
     </div>

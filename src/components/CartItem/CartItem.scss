@@ -1,0 +1,13 @@
+.cart-item {
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .details {
+    .name,
+    .price {
+      font-size: 0.8rem;
+    }
+  }
+}

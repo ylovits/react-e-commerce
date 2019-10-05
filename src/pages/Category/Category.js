@@ -39,8 +39,8 @@ const Category = ({ match, history }) => {
     return (
       <Fragment>
         <div className="row category">
-          {products.map(product => {
-            return <ProductTeaser key={product.MPN} product={product} />;
+          {products.map(item => {
+            return <ProductTeaser key={item.MPN} item={item} />;
           })}
         </div>
       </Fragment>

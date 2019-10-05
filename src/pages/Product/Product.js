@@ -2,8 +2,10 @@ import React, { Fragment, useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import NotFound from "../NotFound/NotFound";
 import "./Product.scss";
+import { connect } from "react-redux";
+import { addItem } from "../../redux/cart/cartActions";
 
-const Product = ({ match }) => {
+const Product = ({ match, addItem }) => {
   const [product, setProduct] = useState({});
   const productsjson = require("../../fakeapi/products.json");
 
@@ -66,7 +68,9 @@ const Product = ({ match }) => {
             <span>Category: {product.category}</span>
             <h2 className="mt-3">{product.price}€</h2>
             <div className="description">{product.description}</div>
-            <button className="add-to-cart">Add To Cart</button>
+            <button onClick={() => addItem(product)} className="add-to-cart">
+              Add To Cart
+            </button>
           </div>
         </div>
       </Fragment>
@@ -76,4 +80,13 @@ const Product = ({ match }) => {
   }
 };
 
-export default withRouter(Product);
+const mapDispatchToProps = dispatch => ({
+  addItem: item => dispatch(addItem(item))
+});
+
+export default withRouter(
+  connect(
+    null,
+    mapDispatchToProps
+  )(Product)
+);

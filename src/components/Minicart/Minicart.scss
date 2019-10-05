@@ -1,0 +1,35 @@
+.item-count {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.minicart {
+  position: absolute;
+  width: 240px;
+  max-height: 340px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  top: 40px;
+  right: 40px;
+  z-index: 5;
+
+  .cart-items {
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+
+  button {
+    margin-top: auto;
+  }
+}
+
+.cart-items::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cart-items::-webkit-scrollbar-thumb {
+  background-color: #000000;
+}
