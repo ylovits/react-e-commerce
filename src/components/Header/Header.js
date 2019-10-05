@@ -5,6 +5,8 @@ import Minicart from "../Minicart/Minicart";
 import "./Header.scss";
 import { auth } from "../../firebase/firebase.utils";
 import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+import { selectCurrentUser } from "../../redux/user/userSelectors";
 
 const Header = ({ currentUser }) => {
   const [menuClassName, setClassName] = useState("");
@@ -61,8 +63,8 @@ const Header = ({ currentUser }) => {
   );
 };
 
-const mapStateToProps = ({ user: { currentUser } }) => ({
-  currentUser
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
 });
 
 export default connect(mapStateToProps)(Header);
