@@ -68,7 +68,7 @@ const Product = ({ match, addItem }) => {
             <span>Category: {product.category}</span>
             <h2 className="mt-3">{product.price}€</h2>
             <div className="description">{product.description}</div>
-            <button onClick={() => addItem(product)} className="add-to-cart">
+            <button onClick={() => addItem(product)} className="styled-button">
               Add To Cart
             </button>
           </div>

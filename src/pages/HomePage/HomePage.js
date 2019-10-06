@@ -3,7 +3,7 @@ import Banners from "../../components/Banners/Banners";
 
 const HomePage = () => {
   return (
-    <div className="homepage" style={{ "min-height": "inherit" }}>
+    <div className="homepage" style={{ minHeight: "inherit" }}>
       <Banners />
     </div>
   );

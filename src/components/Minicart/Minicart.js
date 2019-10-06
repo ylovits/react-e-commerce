@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { toggleCartHidden } from "../../redux/cart/cartActions";
 import {
@@ -7,11 +8,16 @@ import {
   selectHidden
 } from "../../redux/cart/cartSelectors";
 import { createStructuredSelector } from "reselect";
-import { Link } from "react-router-dom";
 import CartItem from "../CartItem/CartItem";
 import "./Minicart.scss";
 
-const Minicart = ({ toggleCartHidden, hidden, cartItems, itemCount }) => {
+const Minicart = ({
+  toggleCartHidden,
+  hidden,
+  cartItems,
+  itemCount,
+  history
+}) => {
   return (
     <li
       className="nav-item cursor-pointer"
@@ -28,11 +34,15 @@ const Minicart = ({ toggleCartHidden, hidden, cartItems, itemCount }) => {
               {cartItems.map(item => (
                 <CartItem key={item.MPN} item={item} />
               ))}
-              <Link to="/checkout">
-                <button className="btn btn-primary btn-block text-uppercase">
-                  Checkout
-                </button>
-              </Link>
+              <button
+                onClick={() => {
+                  history.push("/checkout");
+                  toggleCartHidden();
+                }}
+                className="styled-button p-2 text-uppercase"
+              >
+                Checkout
+              </button>
             </div>
           ) : (
             <span className="mb-3">Your Cart Is Empty</span>
@@ -53,7 +63,9 @@ const mapStateToProps = createStructuredSelector({
   itemCount: selectCartItemsCount
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Minicart);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Minicart)
+);

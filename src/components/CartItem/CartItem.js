@@ -3,7 +3,7 @@ import "./CartItem.scss";
 
 const CartItem = ({ item: { imgUrl, price, name, quantity } }) => {
   return (
-    <div className="cart-item row border-bottom pt-2 pb-2 border-bottom bg-white">
+    <div className="cart-item row pt-2 pb-2 bg-white">
       <div className="col-md-5 p-0">
         <img src={imgUrl} alt="item" />
       </div>

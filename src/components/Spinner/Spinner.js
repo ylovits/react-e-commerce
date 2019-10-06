@@ -5,7 +5,7 @@ const Spinner = () => {
     <Fragment>
       <div
         className="row align-items-center text-center"
-        style={{ "min-height": "inherit" }}
+        style={{ minHeight: "inherit" }}
       >
         <div className="col">
           <img
