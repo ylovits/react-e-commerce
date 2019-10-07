@@ -17,7 +17,6 @@ const Product = ({ match, addItem }) => {
     const res = await axios.get(
       `https://us-central1-let-s-sweat.cloudfunctions.net/app/api/product/${match.params.productMPN}`
     );
-    console.log(res.data);
     setProduct(res.data);
     setLoading(false);
   };
