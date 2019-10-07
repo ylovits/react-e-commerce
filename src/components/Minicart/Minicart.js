@@ -19,11 +19,7 @@ const Minicart = ({
   history
 }) => {
   return (
-    <li
-      className="nav-item cursor-pointer"
-      onMouseEnter={toggleCartHidden}
-      onMouseLeave={toggleCartHidden}
-    >
+    <li className="nav-item cursor-pointer">
       <div onClick={toggleCartHidden}>
         Cart (<span className="item-count">{itemCount}</span>)
       </div>

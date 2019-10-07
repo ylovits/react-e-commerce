@@ -52,7 +52,7 @@ class App extends Component {
       <Router>
         <Fragment>
           <Header />
-          <div className="container pt-1 pl-3 pr-3 pb-1 bg-light main-wrapper">
+          <div className="d-flex flex-column h-100 container pt-1 pl-3 pr-3 pb-1 bg-light main-wrapper">
             <Switch>
               <Route
                 exact

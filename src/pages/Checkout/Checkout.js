@@ -1,5 +1,4 @@
 import React from "react";
-import Spinner from "../../components/Spinner/Spinner";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import CheckoutItem from "../../components/CheckoutItem/CheckoutItem";
@@ -34,7 +33,6 @@ const Checkout = ({ cartItems, cartTotal }) => {
       <div className="checkout-footer pb-2 justify-content-md-center row">
         <span className="text-right col-md-12">TOTAL: {cartTotal}€</span>
       </div>
-      <Spinner />
     </div>
   );
 };

@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 
 const NotFound = () => {
   return (
-    <div className="container">
-      <div className="row align-items-center min-vh-100 text-center">
+    <div className="container d-flex flex-column h-100 flex-grow-1">
+      <div className="row flex-grow-1 align-items-center text-center">
         <div className="col">
           <h1>Page Not Found</h1>
-          <p>
+          <span>
             Return to the <Link to="/">Home page</Link>
-          </p>
+          </span>
         </div>
       </div>
     </div>

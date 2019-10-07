@@ -14,9 +14,12 @@ class Banners extends Component {
 
   componentDidMount() {
     this.setState({ loading: true });
-    const res = require("../../fakeapi/categories.json");
+    fetch(
+      "https://us-central1-let-s-sweat.cloudfunctions.net/app/api/categories"
+    )
+      .then(response => response.json())
+      .then(data => this.setState({ categories: data, loading: false }));
     // should be await async when the api is real http call, not setTimeout
-    setTimeout(() => this.setState({ categories: res, loading: false }), 1500);
   }
 
   render() {

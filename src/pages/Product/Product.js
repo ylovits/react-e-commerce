@@ -2,18 +2,32 @@ import React, { Fragment, useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import NotFound from "../NotFound/NotFound";
 import "./Product.scss";
+import Spinner from "../../components/Spinner/Spinner";
 import { connect } from "react-redux";
 import { addItem } from "../../redux/cart/cartActions";
+import axios from "axios";
 
 const Product = ({ match, addItem }) => {
   const [product, setProduct] = useState({});
-  const productsjson = require("../../fakeapi/products.json");
+  const [loading, setLoading] = useState(true);
+  const [productsjson, setJson] = useState([]);
+
+  const getProducts = async () => {
+    setLoading(true);
+    const res = await axios.get(
+      "https://us-central1-let-s-sweat.cloudfunctions.net/app/api/products"
+    );
+    setProduct(
+      res.data.filter(product =>
+        product.MPN.includes(match.params.productMPN)
+      )[0]
+    );
+    setJson(res.data);
+    setLoading(false);
+  };
 
   useEffect(() => {
-    var singleproduct = productsjson.filter(product =>
-      product.MPN.includes(match.params.productMPN)
-    )[0];
-    setProduct(singleproduct);
+    getProducts();
     // eslint-disable-next-line
   }, []);
 
@@ -31,6 +45,10 @@ const Product = ({ match, addItem }) => {
   const changeImage = e => {
     activeImage.src = e.target.src;
   };
+
+  if (loading) {
+    return <Spinner />;
+  }
 
   if (productExists(match.params.productMPN)) {
     return (

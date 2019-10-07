@@ -3,22 +3,32 @@ import { withRouter } from "react-router-dom";
 import Spinner from "../../components/Spinner/Spinner";
 import ProductTeaser from "../../components/ProductTeaser/ProductTeaser.js";
 import "./Category.scss";
+import NotFound from "../NotFound/NotFound";
+import axios from "axios";
 
 const Category = ({ match, history }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const productsjson = require("../../fakeapi/products.json");
+  const [productsjson, setJson] = useState([]);
+
+  const getCatProducts = async () => {
+    setLoading(true);
+    const res = await axios.get(
+      "https://us-central1-let-s-sweat.cloudfunctions.net/app/api/products"
+    );
+    setProducts(
+      res.data.filter(product =>
+        product.category
+          .toLowerCase()
+          .includes(match.params.categoryId.toLowerCase())
+      )
+    );
+    setJson(res.data);
+    setLoading(false);
+  };
 
   useEffect(() => {
-    setLoading(true);
-    var categoryProds = productsjson.filter(product =>
-      product.category
-        .toLowerCase()
-        .includes(match.params.categoryId.toLowerCase())
-    );
-    setProducts(categoryProds);
-    // should be await async when the api is real http call, not setTimeout
-    setTimeout(() => setLoading(false), 1500);
+    getCatProducts();
     // eslint-disable-next-line
   }, []);
 
@@ -32,10 +42,11 @@ const Category = ({ match, history }) => {
     return false;
   };
 
+  if (loading) {
+    return <Spinner />;
+  }
+
   if (categExists(match.params.categoryId.toLowerCase())) {
-    if (loading) {
-      return <Spinner />;
-    }
     return (
       <Fragment>
         <div className="row category">
@@ -46,7 +57,7 @@ const Category = ({ match, history }) => {
       </Fragment>
     );
   } else {
-    history.push("/404");
+    return <NotFound />;
   }
 };
 

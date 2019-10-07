@@ -34,7 +34,7 @@ const ProductTeaser = ({ item }) => {
               <span>Shop Now</span>
             </div>
           </div>
-          <p className="name text-center">{item.name}</p>
+          <p className="pl-3 pr-3 name text-center">{item.name}</p>
         </div>
       </Link>
     </div>

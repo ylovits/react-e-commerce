@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ReactComponent as Logo } from "../../fakeapi/logo.svg";
 import Minicart from "../Minicart/Minicart";
 import "./Header.scss";
 import { auth } from "../../firebase/firebase.utils";
@@ -25,7 +24,12 @@ const Header = ({ currentUser }) => {
         <div className="col-8 col-md-5 pt-3">
           <p className="logo">
             <Link className="logo-wrap" to="/">
-              <Logo className="logo" />
+              <span className="logo">
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/let-s-sweat.appspot.com/o/images%2Flogo.svg?alt=media&token=9772312f-d20d-4428-a45c-ac1784ddfa06"
+                  alt=""
+                />
+              </span>
             </Link>
           </p>
         </div>
