@@ -1,6 +1,7 @@
 import React from "react";
 import "./CheckoutItem.scss";
 import { connect } from "react-redux";
+import Image from "../../components/Image/Image";
 import {
   clearItemFromCart,
   addItem,
@@ -11,7 +12,7 @@ const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
   return (
     <div className="row border-bottom checkout-item justify-content-md-center pb-2 mb-2">
       <div className="checkout-item-image col-md-3">
-        <img src={cartItem.imgUrl} alt="product" />
+        <Image src={cartItem.imgUrl} alt="product" />
       </div>
       <div className="checkout-item-quantity col-md-3">
         <div>

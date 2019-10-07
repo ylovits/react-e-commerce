@@ -6,7 +6,7 @@ import "./Category.scss";
 import NotFound from "../NotFound/NotFound";
 import axios from "axios";
 
-const Category = ({ match, history }) => {
+const Category = ({ match }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [productsjson, setJson] = useState([]);

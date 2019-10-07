@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import NotFound from "../NotFound/NotFound";
+import Image from "../../components/Image/Image";
 import "./Product.scss";
 import Spinner from "../../components/Spinner/Spinner";
 import { connect } from "react-redux";
@@ -10,19 +11,14 @@ import axios from "axios";
 const Product = ({ match, addItem }) => {
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
-  const [productsjson, setJson] = useState([]);
 
   const getProducts = async () => {
     setLoading(true);
     const res = await axios.get(
-      "https://us-central1-let-s-sweat.cloudfunctions.net/app/api/products"
+      `https://us-central1-let-s-sweat.cloudfunctions.net/app/api/product/${match.params.productMPN}`
     );
-    setProduct(
-      res.data.filter(product =>
-        product.MPN.includes(match.params.productMPN)
-      )[0]
-    );
-    setJson(res.data);
+    console.log(res.data);
+    setProduct(res.data);
     setLoading(false);
   };
 
@@ -32,17 +28,14 @@ const Product = ({ match, addItem }) => {
   }, []);
 
   const productExists = productMpn => {
-    let i = null;
-    for (i = 0; productsjson.length > i; i += 1) {
-      if (productsjson[i].MPN === productMpn) {
-        return true;
-      }
+    if (product.MPN === productMpn) {
+      return true;
     }
     return false;
   };
-
-  const activeImage = document.querySelector(".product-image .active");
   const changeImage = e => {
+    e.preventDefault();
+    const activeImage = document.querySelector(".product-image>img");
     activeImage.src = e.target.src;
   };
 
@@ -57,23 +50,35 @@ const Product = ({ match, addItem }) => {
           <div className="col-sm-12 col-md-7">
             <div className="product-gallery">
               <div className="product-image">
-                <img className="active" src={product.imgUrl} alt="" />
+                <Image src={product.imgUrl} alt="" />
               </div>
-              <ul className="image-list">
+              <ul className="image-list row">
                 {product.img2Url && (
                   <Fragment>
-                    <li className="image-item">
-                      <img onClick={changeImage} src={product.imgUrl} alt="" />
+                    <li className="image-item col-4 p-2 mt-2 mr-0 image-item">
+                      <Image
+                        changeImage={changeImage}
+                        src={product.imgUrl}
+                        alt=""
+                      />
                     </li>
 
-                    <li className="image-item">
-                      <img onClick={changeImage} src={product.img2Url} alt="" />
+                    <li className="image-item col-4 p-2 mt-2 mr-0 image-item">
+                      <Image
+                        changeImage={changeImage}
+                        src={product.img2Url}
+                        alt=""
+                      />
                     </li>
                   </Fragment>
                 )}
                 {product.img3Url && (
-                  <li className="image-item">
-                    <img onClick={changeImage} src={product.img3Url} alt="" />
+                  <li className="image-item col-4 p-2 mr-0 mt-2 image-item">
+                    <Image
+                      changeImage={changeImage}
+                      src={product.img3Url}
+                      alt=""
+                    />
                   </li>
                 )}
               </ul>

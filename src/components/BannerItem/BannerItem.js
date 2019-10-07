@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import Image from "../../components/Image/Image";
 import "./BannerItem.scss";
 
 const BannerItem = ({ name, columns, imgUrl, history }) => {
@@ -9,7 +10,7 @@ const BannerItem = ({ name, columns, imgUrl, history }) => {
       onClick={() => history.push(`/${name.toLowerCase()}`)}
     >
       <div className="banner-item-inner">
-        <img src={imgUrl} alt="" />
+        <Image src={imgUrl} alt="" />
         <div className="centered">
           <h2 className="h5">{name}</h2>
           <span>Shop Now</span>

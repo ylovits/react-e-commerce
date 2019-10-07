@@ -5,6 +5,7 @@ import "./Header.scss";
 import { auth } from "../../firebase/firebase.utils";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
+import Image from "../../components/Image/Image";
 import { selectCurrentUser } from "../../redux/user/userSelectors";
 
 const Header = ({ currentUser }) => {
@@ -25,7 +26,7 @@ const Header = ({ currentUser }) => {
           <p className="logo">
             <Link className="logo-wrap" to="/">
               <span className="logo">
-                <img
+                <Image
                   src="https://firebasestorage.googleapis.com/v0/b/let-s-sweat.appspot.com/o/images%2Flogo.svg?alt=media&token=9772312f-d20d-4428-a45c-ac1784ddfa06"
                   alt=""
                 />

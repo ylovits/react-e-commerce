@@ -29,7 +29,7 @@ export class SignIn extends Component {
 
   render() {
     return (
-      <div className="col-sm-6 signin border-right">
+      <div className="col-sm-6 signin">
         <div className="card-signin">
           <div className="card-body">
             <h5 className="card-title text-center">Already have an account?</h5>
