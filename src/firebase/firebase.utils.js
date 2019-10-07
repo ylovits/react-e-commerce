@@ -7,7 +7,7 @@ const config = {
   authDomain: "let-s-sweat.firebaseapp.com",
   databaseURL: "https://let-s-sweat.firebaseio.com",
   projectId: "let-s-sweat",
-  storageBucket: "",
+  storageBucket: "let-s-sweat.appspot.com",
   messagingSenderId: "22140800874",
   appId: "1:22140800874:web:c65c4eb72187e3624a5f13",
   measurementId: "G-082HZV6XVP"
