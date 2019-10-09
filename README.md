@@ -1,68 +1,54 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Front-end Assignment from SportCompass
 
-## Available Scripts
+## A small e-commerce store demonstrating my understanding of essential front-end concepts, tools and libraries
 
-In the project directory, you can run:
+#
 
-### `npm start`
+### libraries Used:
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. `axios` for consuming APIs
+2. `bootstrap` for styling
+3. `cors` to set my API's cors origin to true
+4. `express` to serve my API while developing
+5. `firebase` all the firebase utilities used (API, storage, authentication, google login and database)
+6. `node-sass` to use the SCSS syntax in my styles
+7. `redux and react-redux` for central application state
+8. `react-router-dom` to implement routing
+9. `redux-logger` as a middleware for reduc related logging
+10. `redux-persist` for data persistance
+11. `react-stripe-checkout` for stripe payments impementation
+12. `reselect` for the creation of redux selectors
+13. `jest and enzyme` for some basic testing
+14. `redux-mock-store` to mock the store while testing
+15. `react-markdown` to include markdon in the about component
+    for more detailed list look at the package.json
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+#
 
-### `npm test`
+### Instructions to run the project:
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Download the `react-e-commerse` repo.
+2. Install <a href="https://nodejs.org"> Node.js</a>
+3. Using a CLI go to the repo's directory (the one that contains package.json)
+4. Run `npm install` do download all the required nod_modules
+5. Run `npm start` to serve the application
 
-### `npm run build`
+### Instructions to test
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Requires that `npm install` has already runned
+2. Run `npm test -- --verbose` to run the tests
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+#
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## More info about the solution
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Created using `npx create-react-app`
+- Responsive Layout using `Bootstrap 4`
+- Ability to add/edit/delete items in the cart
+- Ability to add the same item multiple times to the cart
+- Broken images are swapped with a default one
+- Used class components with state
+- Used stateless functional components
+- Used hooks to add state to functional components
+- Used `Redux` to have App wide state and persistance
+- Used `Jest and Enzyme` for testing
