@@ -3,12 +3,9 @@ import "firebase/firestore";
 import "firebase/auth";
 require("dotenv").config();
 
-let firebaseApiKey;
-
-firebaseApiKey = process.env.REACT_APP_FIREBASE_API_KEY;
-
+// cleaner definition for the apikey
 const config = {
-  apiKey: firebaseApiKey,
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: "let-s-sweat.firebaseapp.com",
   databaseURL: "https://let-s-sweat.firebaseio.com",
   projectId: "let-s-sweat",
